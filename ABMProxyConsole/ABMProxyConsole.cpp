@@ -45,13 +45,6 @@ BOOL OnExit() {
 	if (reading_thread_handle) {
 		WaitForSingleObject(reading_thread_handle, INFINITE);
 	}
-
-	std::cout << "Stopping acquisition" << std::endl;
-
-	{
-		concurrency::critical_section::scoped_lock lock(bci_mutex);
-		StopAcquisition();
-	}
 	
 	ExitProcess(0);
 	return true;
