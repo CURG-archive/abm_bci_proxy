@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4EFD75A1-AB85-44DA-AF7B-FD25FC07DD52}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ABMProxyConsole</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(ProjectDir)\lib;$(ZEROMQ_HOME)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\include;$(ZEROMQ_HOME)\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ABM_Athena.lib;ABM_PlayEbs.lib;libzmq-v110-mt-4_0_4.lib;libprotobuf.lib;libprotobuf-lite.lib;libprotoc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bcidata.pb.h" />
+    <ClInclude Include="DataBlock.h" />
+    <ClInclude Include="include\AbmSdkInclude.h" />
+    <ClInclude Include="include\Athena.h" />
+    <ClInclude Include="include\EegAcqDefine.h" />
+    <ClInclude Include="include\ErrorCode.h" />
+    <ClInclude Include="include\google\protobuf\compiler\code_generator.h" />
+    <ClInclude Include="include\google\protobuf\compiler\command_line_interface.h" />
+    <ClInclude Include="include\google\protobuf\compiler\cpp\cpp_generator.h" />
+    <ClInclude Include="include\google\protobuf\compiler\importer.h" />
+    <ClInclude Include="include\google\protobuf\compiler\java\java_generator.h" />
+    <ClInclude Include="include\google\protobuf\compiler\parser.h" />
+    <ClInclude Include="include\google\protobuf\compiler\plugin.h" />
+    <ClInclude Include="include\google\protobuf\compiler\python\python_generator.h" />
+    <ClInclude Include="include\google\protobuf\descriptor.h" />
+    <ClInclude Include="include\google\protobuf\descriptor.pb.h" />
+    <ClInclude Include="include\google\protobuf\descriptor_database.h" />
+    <ClInclude Include="include\google\protobuf\dynamic_message.h" />
+    <ClInclude Include="include\google\protobuf\extension_set.h" />
+    <ClInclude Include="include\google\protobuf\generated_message_reflection.h" />
+    <ClInclude Include="include\google\protobuf\generated_message_util.h" />
+    <ClInclude Include="include\google\protobuf\io\coded_stream.h" />
+    <ClInclude Include="include\google\protobuf\io\gzip_stream.h" />
+    <ClInclude Include="include\google\protobuf\io\printer.h" />
+    <ClInclude Include="include\google\protobuf\io\tokenizer.h" />
+    <ClInclude Include="include\google\protobuf\io\zero_copy_stream.h" />
+    <ClInclude Include="include\google\protobuf\io\zero_copy_stream_impl.h" />
+    <ClInclude Include="include\google\protobuf\io\zero_copy_stream_impl_lite.h" />
+    <ClInclude Include="include\google\protobuf\message.h" />
+    <ClInclude Include="include\google\protobuf\message_lite.h" />
+    <ClInclude Include="include\google\protobuf\reflection_ops.h" />
+    <ClInclude Include="include\google\protobuf\repeated_field.h" />
+    <ClInclude Include="include\google\protobuf\service.h" />
+    <ClInclude Include="include\google\protobuf\stubs\common.h" />
+    <ClInclude Include="include\google\protobuf\stubs\once.h" />
+    <ClInclude Include="include\google\protobuf\text_format.h" />
+    <ClInclude Include="include\google\protobuf\unknown_field_set.h" />
+    <ClInclude Include="include\google\protobuf\wire_format.h" />
+    <ClInclude Include="include\google\protobuf\wire_format_lite.h" />
+    <ClInclude Include="include\google\protobuf\wire_format_lite_inl.h" />
+    <ClInclude Include="include\PlayEbs.h" />
+    <ClInclude Include="include\TCP\AbmTngrmDll.h" />
+    <ClInclude Include="include\TCP\ThirdPartyCommunication.h" />
+    <ClInclude Include="include\TypeDef.h" />
+    <ClInclude Include="include\TypeDefDataTypes.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="zmq.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ABMProxyConsole.cpp" />
+    <ClCompile Include="bcidata.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\ABM_Actigraphy.dll" />
+    <None Include="lib\ABM_ArtifactEngine.dll" />
+    <None Include="lib\ABM_Athena.dll" />
+    <None Include="lib\ABM_Classification.dll" />
+    <None Include="lib\ABM_CommLib.dll" />
+    <None Include="lib\ABM_Datastreaming.dll" />
+    <None Include="lib\ABM_DefinitionFile.dll" />
+    <None Include="lib\ABM_DeviceConfig.dll" />
+    <None Include="lib\ABM_EbsEngine.dll" />
+    <None Include="lib\ABM_EDFEngine.dll" />
+    <None Include="lib\ABM_FFTLib.dll" />
+    <None Include="lib\ABM_Filters.dll" />
+    <None Include="lib\ABM_HR_library.dll" />
+    <None Include="lib\ABM_Matrix.dll" />
+    <None Include="lib\ABM_PlayEbs.dll" />
+    <None Include="lib\ABM_PSDLib.dll" />
+    <None Include="lib\ABM_PulseRateLibrary.dll" />
+    <None Include="lib\ABM_ThirdPartyCommunication.dll" />
+    <None Include="lib\ABM_ZScore.dll" />
+    <None Include="lib\IHMCAugcog.dll" />
+    <None Include="lib\SiUSBXp.dll" />
+    <CustomBuild Include="protobuf\bcidata.proto">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\lib\protoc.exe --proto_path=$(ProjectDir)\protobuf --cpp_out=$(ProjectDir) %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).pb.h;$(ProjectDir)%(Filename).pb.cc</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

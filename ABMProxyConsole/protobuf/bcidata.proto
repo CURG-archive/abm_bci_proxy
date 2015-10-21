@@ -1,0 +1,15 @@
+package bci;
+
+message Data {
+    required int64 id = 1;
+    required int32 type = 2;
+    required int64 timestamp = 3;
+
+    repeated Datum contents = 4;
+}
+
+message Datum {
+    required int64 timestamp = 1;
+    optional int32 thirdparty = 2;
+    repeated float sensors = 3;
+}
